@@ -1,16 +1,15 @@
 
 .quiz-box{
-    width: 100%;
+    width: 80%;
     max-width: 100%;
     margin: 0;
-    background-color: #333333;
-    border-radius: 10px;
+    background-color: #D3D3D3;
     padding: 20px;
     box-sizing: border-box;
-    height: 399px;
+    height: 700px;
 }
 .timer{
-    background-color: #444;
+    background-color: #FF0000;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -19,8 +18,12 @@
     align-items: center;
     font-size: 20px;
 }
-.question{
+.question {
     flex-grow: 1;
     margin-left: 20px;
-    font-size: 16px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

@@ -4,71 +4,42 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" type="module" defer></script>
 </head>
 <body>
 <header class="header">
     <h1>Website Header</h1>
-  <div>
-     <nav class="nav">
-        <ul class="nav-list">
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-
-        </ul>
-     </nav>
-  </div>
+    <div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </nav>
+    </div>
 </header>
-
-
 
 <main class="main">
     <div class="quiz-box">
         <div class="quiz-header">
-            <div class="timer">
-                timer
-            </div>
-            <div class="question">
-                question
-            </div>
+            <div class="timer" id="timer">0:15</div>
+            <div class="question" id="question">Name of this horse</div>
             <div class="question-image">
-
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZGLRq7TRllKuzYpxrvvCGJRSLHAEXGU81GA&s" alt="Question Image">
             </div>
             <div class="options">
-                <button class="option">
-                    1
-                </button>
-                <button class="option">
-                    2
-                </button>
-                <button class="option">
-                    3
-                </button>
-                <button class="option">
-                    4
-                </button>
+                <button class="option option1" data-option="1">1</button>
+                <button class="option option2" data-option="2">2</button>
+                <button class="option option3" data-option="3">3</button>
+                <button class="option option4" data-option="4">4</button>
             </div>
         </div>
     </div>
-    <div class="additional-content">
-        <h2>Quiz Summary</h2>
-        <p>Number of Questions: 10</p>
-        <p>Time Limit: 15 minutes</p>
-        <p>Scoring: 10 points per correct answer</p>
-
-        <h2>Leaderboard</h2>
-        <ol>
-            <li>User1 - 90 points</li>
-            <li>User2 - 80 points</li>
-            <li>User3 - 70 points</li>
-        </ol>
+    <div class="score">
+    Score:0
     </div>
+
 </main>
 <footer>FOOTER</footer>
 </body>
