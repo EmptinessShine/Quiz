@@ -1,49 +1,43 @@
-import { startTimer, stopTimer } from './timer.js';
-import { increaseScore, resetScore } from './score.js';
-import { questions } from './questions.js';
+import { questionsAndAnswers } from './questions.js';
+import { updateScore, saveScore, displayRecord } from './score.js';
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function loadQuestion() {
+    const questionElement = document.getElementById('question');
+    const optionButtons = document.querySelectorAll('.option');
+
+    if (!questionElement || optionButtons.length === 0) {
+        console.error('DOM elements not found');
+        return;
+    }
+
+    const currentQuestion = questionsAndAnswers[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+
+    optionButtons.forEach((button, index) => {
+        button.textContent = currentQuestion.answers[index];
+        button.onclick = () => checkAnswer(index);
+    });
+}
+
+function checkAnswer(selectedIndex) {
+    const currentQuestion = questionsAndAnswers[currentQuestionIndex];
+    if (selectedIndex === currentQuestion.correctAnswerIndex) {
+        score++;
+        updateScore(score);
+    }
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questionsAndAnswers.length) {
+        loadQuestion();
+    } else {
+        saveScore(score);
+        displayRecord();
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-    const options = document.querySelectorAll('.option');
-    const questionElement = document.getElementById('question');
-    const timerElement = document.getElementById('timer');
-    const questionImageElement = document.querySelector('.question-image img');
-    let currentQuestionIndex = 0;
-
-    function updateTimer(time) {
-        timerElement.textContent = time;
-    }
-
-    function loadNextQuestion() {
-        if (currentQuestionIndex < questions.length) {
-            const currentQuestion = questions[currentQuestionIndex];
-            questionElement.textContent = currentQuestion.question;
-            questionImageElement.src = currentQuestion.image;
-            options.forEach((option, index) => {
-                option.textContent = currentQuestion.options[index];
-                option.setAttribute('data-option', index);
-            });
-            startTimer(updateTimer, loadNextQuestion);
-        } else {
-            alert('Quiz completed!');
-        }
-    }
-
-    options.forEach(option => {
-        option.addEventListener('click', () => {
-            const selectedOption = parseInt(option.getAttribute('data-option'));
-            const currentQuestion = questions[currentQuestionIndex];
-            if (selectedOption === currentQuestion.correctAnswer) {
-                alert('Correct!');
-                increaseScore(10);
-            } else {
-                alert('Incorrect!');
-            }
-            stopTimer();
-            currentQuestionIndex++;
-            loadNextQuestion();
-        });
-    });
-
-    resetScore();
-    loadNextQuestion();
+    loadQuestion();
+    displayRecord();
 });
