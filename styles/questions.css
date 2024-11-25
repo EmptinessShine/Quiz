@@ -1,12 +1,12 @@
 .question-image{
-    background-color: #D3D3D3;
-    height: 400px;
-    margin-bottom: 20px;
+    height: 480px;
+    margin: 0 auto 20px auto;
     display: flex;
     justify-content: center;
     justify-items: center;
     font-size: 14px;
-    color: #cccccc;
+    color: #D3D3D3;
+    width: 1200px;
 }
 .options{
     display: grid;
@@ -22,6 +22,7 @@
     transition: background-color 0.3s;
     width: 100%;
     height: 80px;
+    background-color: #D3D3D3;
 }
 .option1{
     background-color: #de0c3e;

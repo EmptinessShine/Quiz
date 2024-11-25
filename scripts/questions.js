@@ -2,12 +2,14 @@ export const questionsAndAnswers = [
     {
         question: "Столица Японии",
         answers:["Токио", "Сеул", "Пекин", "Киото"],
-        correctAnswerIndex: 0
+        correctAnswerIndex: 0,
+        image: "img/tokyo.jpg"
     },
     {
         question: "Валюта Японии",
         answers: ["Юани","Воны","Иены","Тенге"],
-        correctAnswerIndex: 2
+        correctAnswerIndex: 2,
+        image: "img/yen.jpg"
     },
     {
         question: "Какая гора является самой высокой точкой Японии?",
@@ -17,7 +19,8 @@ export const questionsAndAnswers = [
     {
         question: "Как называется искусство складывания бумаги, зародившееся в Японии?",
         answers: ["Кириэ","Оригами","Икебана","Чадо"],
-        correctAnswerIndex: 1
+        correctAnswerIndex: 1,
+        image: "img/Origami.jpg"
     },
     {
         question: "Какие цветы традиционно ассоциируются с приходом весны в Японии??",

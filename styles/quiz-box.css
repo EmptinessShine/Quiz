@@ -1,12 +1,12 @@
 
 .quiz-box{
-    width: 80%;
+    width: 85%;
     max-width: 100%;
     margin: 0;
-    background-color: #D3D3D3;
+    background-color: #d2e2e7;
     padding: 20px;
     box-sizing: border-box;
-    height: 700px;
+    height: 800px;
 }
 .timer{
     background-color: #FF0000;
@@ -21,7 +21,8 @@
 .question {
     flex-grow: 1;
     margin-left: 20px;
-    font-size: 24px;
+    margin-bottom: 20px;
+    font-size: 40px;
     display: flex;
     justify-content: center;
     align-items: center;

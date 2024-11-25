@@ -20,10 +20,10 @@ main{
 }
 .body{
     margin: 0;
-    background-color: aqua;
+    background-color: #FFFFFF;
 }
 .main{
-    background-color: gray;
+    background-color: #d4e5e3  ;
 }
 #restartButton{
     display: flex;
