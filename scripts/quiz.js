@@ -1,17 +1,13 @@
 import { questionsAndAnswers } from './questions.js';
 import { updateScore, saveScore, displayRecord } from './score.js';
+import{timerUpdate} from "./timer.js";
 
-let currentQuestionIndex = 0;
-let score = 0;
+export let currentQuestionIndex = 0;
+export let score = 0;
 
-function loadQuestion() {
+export function loadQuestion() {
     const questionElement = document.getElementById('question');
     const optionButtons = document.querySelectorAll('.option');
-
-    if (!questionElement || optionButtons.length === 0) {
-        console.error('DOM elements not found');
-        return;
-    }
 
     const currentQuestion = questionsAndAnswers[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
@@ -20,6 +16,7 @@ function loadQuestion() {
         button.textContent = currentQuestion.answers[index];
         button.onclick = () => checkAnswer(index);
     });
+    timerUpdate()
 }
 
 function checkAnswer(selectedIndex) {
@@ -34,10 +31,19 @@ function checkAnswer(selectedIndex) {
     } else {
         saveScore(score);
         displayRecord();
+        alert(`Your score is: ${score}`);
     }
+}
+
+function resetQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    updateScore(score);
+    loadQuestion();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     loadQuestion();
     displayRecord();
+    document.getElementById('restartButton').addEventListener('click', resetQuiz);
 });

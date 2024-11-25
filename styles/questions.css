@@ -24,37 +24,37 @@
     height: 80px;
 }
 .option1{
-    background-color: #87CEEB;
+    background-color: #de0c3e;
 }
 .option2 {
-    background-color: #F08080;
+    background-color: #eea700;
 }
 
 .option3 {
-    background-color: #98FB98;
+    background-color: #0fb105;
 }
 
 .option4 {
-    background-color: #E6E6FA;
+    background-color: #006bd2;
 }
 .option:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .option1:hover {
-    background-color: #4682B4;
+    background-color: #b00a32;
 }
 
 .option2:hover {
-    background-color: #FF6347;
+    background-color: #c68a00;
 }
 
 .option3:hover {
-    background-color: #3CB371;
+    background-color: #0c8a04;
 }
 
 .option4:hover {
-    background-color: #9370DB;
+    background-color: #0052a1;
 }
 
 

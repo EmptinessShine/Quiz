@@ -25,3 +25,7 @@ main{
 .main{
     background-color: gray;
 }
+#restartButton{
+    display: flex;
+    flex-direction: row;
+}
