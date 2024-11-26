@@ -1,0 +1,21 @@
+.game-over-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.game-over-screen h1 {
+    margin-bottom: 20px;
+}
+
+.game-over-screen p {
+    margin-bottom: 20px;
+}
+
+.game-over-screen button {
+    padding: 10px 20px;
+    font-size: 16px;
+}

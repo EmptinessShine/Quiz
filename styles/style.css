@@ -1,6 +1,9 @@
 @import "header.css";
 @import "quiz-box.css";
 @import "questions.css";
+@import "game-over.css";
+@import "main-screen.css";
+
 
 /* reseting styles and adding my own*/
 *{
