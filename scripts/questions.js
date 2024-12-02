@@ -42,3 +42,50 @@ export const questionsAndAnswers = [
         answers: ["Карп","Лосось","Сардина","Форель"],
         correctAnswerIndex: 1
     }];
+
+
+export const questionsAndAnswersKz = [
+    {
+        question: "Столица Казахстана",
+        answers: ["Алматы", "Нур-Султан", "Шымкент", "Караганда"],
+        correctAnswerIndex: 1,
+        image: "img/nur-sultan.jpg"
+    },
+    {
+        question: "Национальная валюта Казахстана",
+        answers: ["Рубль", "Сом", "Тенге", "Манат"],
+        correctAnswerIndex: 2,
+        image: "img/tenge.jpg"
+    },
+    {
+        question: "Какая гора является самой высокой точкой Казахстана?",
+        answers: ["Хан-Тенгри", "Эльбрус", "Пик Ленина", "Пик Победы"],
+        correctAnswerIndex: 0
+    },
+    {
+        question: "Как называется традиционное казахское блюдо из мяса и теста?",
+        answers: ["Плов", "Манты", "Бешбармак", "Лагман"],
+        correctAnswerIndex: 2,
+        image: "img/beshbarmak.jpg"
+    },
+    {
+        question: "Как называется традиционный казахский напиток из кобыльего молока?",
+        answers: ["Айран", "Кумыс", "Тан", "Шубат"],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Как называется традиционная казахская юрта?",
+        answers: ["Гер", "Чум", "Юрта", "Вигвам"],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "Какой город является крупнейшим в Казахстане по численности населения?",
+        answers: ["Нур-Султан", "Шымкент", "Алматы", "Актобе"],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "Как называется традиционный казахский музыкальный инструмент?",
+        answers: ["Домбра", "Балалайка", "Гусли", "Баян"],
+        correctAnswerIndex: 0
+    }
+];

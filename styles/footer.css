@@ -1,0 +1,15 @@
+footer{
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 5vh;
+    background-color: #1A237E;
+
+}
+.footer-text{
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+}

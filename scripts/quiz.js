@@ -1,8 +1,7 @@
 import { questionsAndAnswers } from './questions.js';
 import { updateScore, saveScore, displayRecord } from './score.js';
-import { timerUpdate } from './timer.js';
+import { startTimer, resetTimer } from './timer.js'; // Добавлен импорт timeLeft
 
-/*   Used for call functions in ./timer.js and increment CurrentQuestionINdex*/
 export let currentQuestionIndex = 0;
 export let score = 0;
 
@@ -13,6 +12,8 @@ export function getCurrentQuestionIndex(){
     return currentQuestionIndex;
 }
 
+
+// используется для перемешивания вопросов
 function shuffle(array) {
     for (var i = array.length - 1; i >= 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -21,7 +22,7 @@ function shuffle(array) {
         array[j] = temp;
     }
 }
-
+// используется для перемешивания ответов
 function shuffleAnswers(questions) {
     questions.forEach(question => {
         var correctAnswer = question.answers[question.correctAnswerIndex];
@@ -33,10 +34,11 @@ function shuffleAnswers(questions) {
 shuffle(questionsAndAnswers);
 shuffleAnswers(questionsAndAnswers);
 
+
+//выгрузка вопросов с массива
 export function loadQuestion() {
     const questionElement = document.getElementById('question');
     const optionButtons = document.querySelectorAll('.option');
-    const imageElement = document.querySelector('#question-image img');
     const currentQuestion = questionsAndAnswers[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
 
@@ -44,16 +46,8 @@ export function loadQuestion() {
         button.textContent = currentQuestion.answers[index];
         button.onclick = () => checkAnswer(button.textContent);
     });
-    if (imageElement){
-        imageElement.src = currentQuestion.image;
-    } else {
-        const img = document.createElement('img');
-        img.src = currentQuestion.image;
-        document.querySelector('.question-image').appendChild(img);
-    }
-
-    timerUpdate();
 }
+
 
 function resetQuiz() {
     currentQuestionIndex = 0;
@@ -61,6 +55,7 @@ function resetQuiz() {
     updateScore(score);
     loadQuestion();
 }
+
 
 function checkAnswer(selectedAnswer) {
     const currentQuestion = questionsAndAnswers[currentQuestionIndex];
@@ -71,6 +66,8 @@ function checkAnswer(selectedAnswer) {
     currentQuestionIndex++;
     if (currentQuestionIndex < questionsAndAnswers.length) {
         loadQuestion();
+        resetTimer();
+        startTimer();
     } else {
         saveScore(score);
         displayRecord();

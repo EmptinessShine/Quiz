@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="header">
-    <h1>Website Header</h1>
+    <h1>Quiz game</h1>
     <div>
         <nav class="nav">
             <ul class="nav-list">
@@ -22,6 +22,7 @@
 
 <div id="mainScreen" class="main-screen">
     <h1>Welcome to the Quiz Game</h1>
+    <h2>На каждый вопрос дается 15 секунд. Удачи!</h2>
     <button id="startButton">Start Quiz</button>
 </div>
 
@@ -35,11 +36,11 @@
 <button id="restartButton">Restart</button>
     <div class="quiz-box">
         <div class="quiz-header">
-            <div class="timer" id="timer"></div>
             <div class="question" id="question"></div>
-            <div class="question-image" id="question-image">
-                <img src="" alt="Question img">
-            </div>
+            <div class="timer-container">
+    <div class="timer-arrow"></div>
+    <div class="timer-display" id="timerDisplay">00:00</div>
+</div>
             <div class="options">
                 <button class="option option1" ></button>
                 <button class="option option2" ></button>
@@ -54,6 +55,11 @@
     <div class="record">Record: 0</div>
 
 </main>
-<footer>FOOTER</footer>
+<footer class="footer">
+    <p class="footer-text">
+        Created by: EmptinessShine(R.K)
+    </p>
+</footer>
+
 </body>
 </html>

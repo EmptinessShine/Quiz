@@ -8,14 +8,14 @@
 }
 
 .game-over-screen h1 {
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
 }
 
 .game-over-screen p {
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
 }
 
 .game-over-screen button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 1vh 2vh;
+    font-size: 1.6rem;
 }
