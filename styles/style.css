@@ -35,3 +35,10 @@ main{
     display: flex;
     flex-direction: row;
 }
+.main-screen h1, .main-screen h2, .main-screen label {
+    margin-bottom: 1vh;
+}
+
+.main-screen button, .styled-select {
+    margin-top: 1vh;
+}

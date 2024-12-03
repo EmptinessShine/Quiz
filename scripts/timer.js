@@ -3,7 +3,7 @@ import { questionsAndAnswers } from './questions.js';
 import { displayRecord, saveScore } from './score.js';
 
 let timer;
-export let timeLeft = 15; // Экспорт переменной timeLeft
+export let timeLeft = 15;
 
 export function startTimer() {
     clearInterval(timer);
