@@ -1,3 +1,5 @@
+//массивы вопросов
+
 export const questionsAndAnswers = [
     {
         question: "Столица Японии",
@@ -87,5 +89,50 @@ export const questionsAndAnswersKz = [
         question: "Как называется традиционный казахский музыкальный инструмент?",
         answers: ["Домбра", "Балалайка", "Гусли", "Баян"],
         correctAnswerIndex: 0
+    }
+];
+export const questionsAndAnswersUS = [
+    {
+        question: "Столица США",
+        answers: ["Вашингтон", "Нью-Йорк", "Лос-Анджелес", "Чикаго"],
+        correctAnswerIndex: 0,
+        image: "img/washington.jpg"
+    },
+    {
+        question: "Национальная валюта США",
+        answers: ["Евро", "Фунт", "Доллар", "Песо"],
+        correctAnswerIndex: 2,
+        image: "img/dollar.jpg"
+    },
+    {
+        question: "Какой город является крупнейшим в США по численности населения?",
+        answers: ["Вашингтон", "Нью-Йорк", "Лос-Анджелес", "Чикаго"],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Как называется национальный гимн США?",
+        answers: ["God Save the Queen", "The Star-Spangled Banner", "O Canada", "La Marseillaise"],
+        correctAnswerIndex: 1,
+        image: "img/anthem.jpg"
+    },
+    {
+        question: "Какой штат является самым большим по площади в США?",
+        answers: ["Техас", "Калифорния", "Аляска", "Монтана"],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "Как называется самый высокий небоскреб в США?",
+        answers: ["Эмпайр-стейт-билдинг", "Уиллис-тауэр", "One World Trade Center", "Chrysler Building"],
+        correctAnswerIndex: 2
+    },
+    {
+        question: "Какой президент США подписал Декларацию независимости?",
+        answers: ["Джордж Вашингтон", "Томас Джефферсон", "Авраам Линкольн", "Джон Адамс"],
+        correctAnswerIndex: 1
+    },
+    {
+        question: "Какой национальный парк является самым старым в США?",
+        answers: ["Йосемити", "Гранд-Каньон", "Йеллоустоун", "Зайон"],
+        correctAnswerIndex: 2
     }
 ];

@@ -1,10 +1,14 @@
-import { questionsAndAnswers } from './questions.js';
+import { questionsAndAnswers, questionsAndAnswersKz, questionsAndAnswersUS} from './questions.js';
 import { updateScore, saveScore, displayRecord } from './score.js';
-import { startTimer, resetTimer } from './timer.js'; // Добавлен импорт timeLeft
+import { startTimer, resetTimer } from './timer.js';
+
+
 
 export let currentQuestionIndex = 0;
 export let score = 0;
+let selectedQuestions = questionsAndAnswers;
 
+//используется для выгрузки в таймер
 export function currentQusetionIndexPlusPlus(){
     currentQuestionIndex++;
 }
@@ -13,7 +17,7 @@ export function getCurrentQuestionIndex(){
 }
 
 
-// используется для перемешивания вопросов
+// перемешивание вопросов и ответов
 function shuffle(array) {
     for (var i = array.length - 1; i >= 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -22,7 +26,7 @@ function shuffle(array) {
         array[j] = temp;
     }
 }
-// используется для перемешивания ответов
+
 function shuffleAnswers(questions) {
     questions.forEach(question => {
         var correctAnswer = question.answers[question.correctAnswerIndex];
@@ -31,15 +35,12 @@ function shuffleAnswers(questions) {
     });
 }
 
-shuffle(questionsAndAnswers);
-shuffleAnswers(questionsAndAnswers);
 
-
-//выгрузка вопросов с массива
-export function loadQuestion() {
+//основной метод выгрузки вопросов
+export  function loadQuestion() {
     const questionElement = document.getElementById('question');
     const optionButtons = document.querySelectorAll('.option');
-    const currentQuestion = questionsAndAnswers[currentQuestionIndex];
+    const currentQuestion = selectedQuestions[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
 
     optionButtons.forEach((button, index) => {
@@ -47,8 +48,6 @@ export function loadQuestion() {
         button.onclick = () => checkAnswer(button.textContent);
     });
 }
-
-
 function resetQuiz() {
     currentQuestionIndex = 0;
     score = 0;
@@ -56,15 +55,14 @@ function resetQuiz() {
     loadQuestion();
 }
 
-
 function checkAnswer(selectedAnswer) {
-    const currentQuestion = questionsAndAnswers[currentQuestionIndex];
+    const currentQuestion = selectedQuestions[currentQuestionIndex];
     if (selectedAnswer === currentQuestion.answers[currentQuestion.correctAnswerIndex]) {
         score++;
         updateScore(score);
     }
     currentQuestionIndex++;
-    if (currentQuestionIndex < questionsAndAnswers.length) {
+    if (currentQuestionIndex < selectedQuestions.length) {
         loadQuestion();
         resetTimer();
         startTimer();
@@ -92,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.getElementById('startButton');
     const restartButton = document.getElementById('restartButton');
     const playAgainButton = document.getElementById('playAgainButton');
+    const topicSelect = document.getElementById('topicSelect');
 
     function showMainScreen() {
         mainScreen.style.display = 'flex';
@@ -100,6 +99,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startQuiz() {
+        const selectedTopic = topicSelect.value;
+        if (selectedTopic === 'japan') {
+            selectedQuestions = questionsAndAnswers;
+        } else if (selectedTopic === 'kazakhstan') {
+            selectedQuestions = questionsAndAnswersKz;
+        }
+        else if(selectedTopic === 'usa'){
+            selectedQuestions = questionsAndAnswersUS;
+        }
+        shuffle(selectedQuestions);
+        shuffleAnswers(selectedQuestions);
         mainScreen.style.display = 'none';
         quizScreen.style.display = 'flex';
         gameOverScreen.style.display = 'none';
